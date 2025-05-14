@@ -22,8 +22,8 @@ import { Computers } from './components/ComputersCanvas';
 import Contact from './components/Contact';
 import EarthCanvas from './components/EarthCanvas';
 import Projects from './components/Projects';
-import WorkExperience from './components/WorkExperience';
 import Starfield from './components/Starfield';
+import WorkExperience from './components/WorkExperience';
 
 // Styled Components
 const AppContainer = styled.div`
