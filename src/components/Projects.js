@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -16,7 +15,7 @@ const ProjectsContainer = styled.div`
   width: 100%;
 `;
 
-const ProjectsTitle = styled(motion.h2)`
+const ProjectsTitle = styled.h2`
   font-size: 2.5rem;
   color: #ccd6f6;
   margin-bottom: 2rem;
@@ -40,7 +39,7 @@ const ProjectsGrid = styled.div`
   margin-top: 3rem;
 `;
 
-const ProjectCard = styled(motion.div)`
+const ProjectCard = styled.div`
   background: #112240;
   border-radius: 8px;
   padding: 2rem;
@@ -97,73 +96,62 @@ const ProjectTech = styled.div`
 `;
 
 const projects = [
-    {
-        title: "E-Commerce Platform",
-        description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
-        github: "https://github.com",
-        live: "https://example.com",
-        tech: ["React", "Node.js", "MongoDB", "Stripe"]
-    },
-    {
-        title: "Task Management App",
-        description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-        github: "https://github.com",
-        live: "https://example.com",
-        tech: ["React", "Firebase", "Material-UI", "Redux"]
-    },
-    {
-        title: "Portfolio Website",
-        description: "A modern portfolio website showcasing projects and skills, built with React and Three.js for 3D animations.",
-        github: "https://github.com",
-        live: "https://example.com",
-        tech: ["React", "Three.js", "Styled Components", "Framer Motion"]
-    }
+  {
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
+    github: "https://github.com",
+    live: "https://example.com",
+    tech: ["React", "Node.js", "MongoDB", "Stripe"]
+  },
+  {
+    title: "Task Management App",
+    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    github: "https://github.com",
+    live: "https://example.com",
+    tech: ["React", "Firebase", "Material-UI", "Redux"]
+  },
+  {
+    title: "Portfolio Website",
+    description: "A modern portfolio website showcasing projects and skills, built with React and Three.js for 3D animations.",
+    github: "https://github.com",
+    live: "https://example.com",
+    tech: ["React", "Three.js", "Styled Components", "Framer Motion"]
+  }
 ];
 
 const Projects = () => {
-    return (
-        <ProjectsSection id="projects">
-            <ProjectsContainer>
-                <ProjectsTitle
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                >
-                    My Projects
-                </ProjectsTitle>
-                <ProjectsGrid>
-                    {projects.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            <ProjectHeader>
-                                <ProjectTitle>{project.title}</ProjectTitle>
-                                <ProjectLinks>
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                                        <FaGithub />
-                                    </a>
-                                    <a href={project.live} target="_blank" rel="noopener noreferrer">
-                                        <FaExternalLinkAlt />
-                                    </a>
-                                </ProjectLinks>
-                            </ProjectHeader>
-                            <ProjectDescription>{project.description}</ProjectDescription>
-                            <ProjectTech>
-                                {project.tech.map((tech, i) => (
-                                    <span key={i}>{tech}</span>
-                                ))}
-                            </ProjectTech>
-                        </ProjectCard>
-                    ))}
-                </ProjectsGrid>
-            </ProjectsContainer>
-        </ProjectsSection>
-    );
+  return (
+    <ProjectsSection id="projects">
+      <ProjectsContainer>
+        <ProjectsTitle>
+          My Projects
+        </ProjectsTitle>
+        <ProjectsGrid>
+          {projects.map((project, index) => (
+            <ProjectCard key={index}>
+              <ProjectHeader>
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectLinks>
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <FaGithub />
+                  </a>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">
+                    <FaExternalLinkAlt />
+                  </a>
+                </ProjectLinks>
+              </ProjectHeader>
+              <ProjectDescription>{project.description}</ProjectDescription>
+              <ProjectTech>
+                {project.tech.map((tech, i) => (
+                  <span key={i}>{tech}</span>
+                ))}
+              </ProjectTech>
+            </ProjectCard>
+          ))}
+        </ProjectsGrid>
+      </ProjectsContainer>
+    </ProjectsSection>
+  );
 };
 
 export default Projects; 

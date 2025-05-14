@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -15,7 +14,7 @@ const AboutContainer = styled.div`
   width: 100%;
 `;
 
-const AboutTitle = styled(motion.h2)`
+const AboutTitle = styled.h2`
   font-size: 2.5rem;
   color: #ccd6f6;
   margin-bottom: 2rem;
@@ -42,7 +41,7 @@ const AboutContent = styled.div`
   }
 `;
 
-const AboutText = styled(motion.div)`
+const AboutText = styled.div`
   color: #8892b0;
   line-height: 1.6;
   
@@ -51,7 +50,7 @@ const AboutText = styled(motion.div)`
   }
 `;
 
-const SkillsList = styled(motion.div)`
+const SkillsList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -73,61 +72,46 @@ const SkillsList = styled(motion.div)`
 `;
 
 const About = () => {
-    return (
-        <AboutSection id="about">
-            <AboutContainer>
-                <AboutTitle
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                >
-                    About Me
-                </AboutTitle>
-                <AboutContent>
-                    <AboutText
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        viewport={{ once: true }}
-                    >
-                        <p>
-                            Hello! I'm a passionate full-stack developer with a strong foundation in web technologies
-                            and a keen eye for creating elegant solutions. I enjoy building things that live on the
-                            internet, whether that be websites, applications, or anything in between.
-                        </p>
-                        <p>
-                            My journey in web development started back in 2019 when I decided to try editing custom
-                            Tumblr themes — turns out hacking together a custom reblog button taught me a lot about
-                            HTML & CSS!
-                        </p>
-                        <p>
-                            Fast-forward to today, and I've had the privilege of working at various companies and
-                            on various projects. My main focus these days is building accessible, human-centered
-                            products.
-                        </p>
-                    </AboutText>
-                    <SkillsList
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        viewport={{ once: true }}
-                    >
-                        <ul>
-                            <li>JavaScript (ES6+)</li>
-                            <li>React.js</li>
-                            <li>Node.js</li>
-                            <li>TypeScript</li>
-                            <li>Python</li>
-                            <li>SQL</li>
-                            <li>Git</li>
-                            <li>Docker</li>
-                        </ul>
-                    </SkillsList>
-                </AboutContent>
-            </AboutContainer>
-        </AboutSection>
-    );
+  return (
+    <AboutSection id="about">
+      <AboutContainer>
+        <AboutTitle>
+          About Me
+        </AboutTitle>
+        <AboutContent>
+          <AboutText>
+            <p>
+              Hello! I'm a passionate full-stack developer with a strong foundation in web technologies
+              and a keen eye for creating elegant solutions. I enjoy building things that live on the
+              internet, whether that be websites, applications, or anything in between.
+            </p>
+            <p>
+              My journey in web development started back in 2019 when I decided to try editing custom
+              Tumblr themes — turns out hacking together a custom reblog button taught me a lot about
+              HTML & CSS!
+            </p>
+            <p>
+              Fast-forward to today, and I've had the privilege of working at various companies and
+              on various projects. My main focus these days is building accessible, human-centered
+              products.
+            </p>
+          </AboutText>
+          <SkillsList>
+            <ul>
+              <li>JavaScript (ES6+)</li>
+              <li>React.js</li>
+              <li>Node.js</li>
+              <li>TypeScript</li>
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Git</li>
+              <li>Docker</li>
+            </ul>
+          </SkillsList>
+        </AboutContent>
+      </AboutContainer>
+    </AboutSection>
+  );
 };
 
 export default About; 

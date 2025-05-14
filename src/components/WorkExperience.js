@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import { FaCar, FaCoffee } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -8,7 +7,7 @@ const Section = styled.section`
   padding: 6rem 2rem 2rem 2rem;
   background: #0a192f;
 `;
-const Title = styled(motion.h2)`
+const Title = styled.h2`
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 2rem;
@@ -30,7 +29,7 @@ const Timeline = styled.div`
     transform: translateX(-50%);
   }
 `;
-const Item = styled(motion.div)`
+const Item = styled.div`
   position: relative;
   width: 50%;
   padding: 2rem 2rem 2rem 4rem;
@@ -126,12 +125,7 @@ const jobs = [
 
 const WorkExperience = () => (
   <Section id="work-experience">
-    <Title
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-    >
+    <Title>
       Work Experience
     </Title>
     <Timeline>
@@ -139,10 +133,6 @@ const WorkExperience = () => (
         <Item
           key={i}
           $right={job.right}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: i * 0.2 }}
-          viewport={{ once: true }}
         >
           <IconCircle>{job.icon}</IconCircle>
           <Date>{job.date}</Date>
