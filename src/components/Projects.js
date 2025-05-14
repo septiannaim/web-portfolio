@@ -115,7 +115,7 @@ const projects = [
     description: "A modern portfolio website showcasing projects and skills, built with React and Three.js for 3D animations.",
     github: "https://github.com",
     live: "https://example.com",
-    tech: ["React", "Three.js", "Styled Components", "Framer Motion"]
+    tech: ["React", "Three.js", "Styled Components"]
   }
 ];
 
